@@ -48,14 +48,23 @@ await addToHistory(history)
 
 
   }
+  const dragStarted =(e,id)=>{
+    console.log(`video with ${id} started dragging`);
+     e.dataTransfer.setData("videoid",id)
+    
+  }
   return (
     <>
 
-      <Card style={{ width: '14rem' }} onClick={handleShow}>
-        <Card.Img variant="top" src={displayVideo.thumbnailUrl} height={'200px'} />
+      <Card style={{ 
+  width: '14rem',
+  backgroundColor: '#1e1e2d',
+  border: '1px solid #444'
+}}  draggable onDragStart={(e)=>dragStarted(e,displayVideo.id)}>
+        <Card.Img variant="top" src={displayVideo.thumbnailUrl} height={'200px'} onClick={handleShow} />
         <Card.Body>
           <div className='d-flex justify-content-between'>
-            <Card.Title>{displayVideo.caption.slice(0, 12)}</Card.Title>
+            <Card.Title>{displayVideo.caption.slice(0, 12)} </Card.Title>
             <Button variant="danger" onClick={() => removeVideo(displayVideo.id)}><i class="fa-solid fa-trash"></i></Button>
           </div>
 

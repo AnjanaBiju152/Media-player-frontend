@@ -65,7 +65,10 @@ function Add({ setuploadVideoStatus }) {
                 backdrop="static"
                 keyboard={false}
                 data-bs-theme='dark'
+
+                contentClassName="bg-dark"
             >
+
                 <Modal.Header closeButton>
                     <Modal.Title className='textStyle'> <i class="fa-solid fa-film text-warning me-3"></i>UPLOAD VIDEO</Modal.Title>
                 </Modal.Header>

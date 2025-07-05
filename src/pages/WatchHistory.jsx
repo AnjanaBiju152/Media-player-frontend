@@ -21,7 +21,7 @@ function WatchHistory() {
   const removeHistory = async (id) => {
     await deleteHistory(id)
     getAllHistory()
-    
+
   }
 
   return (

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { addCategory, deleteVideoCategory, getAllCategory } from '../services/allApi';
+import { addCategory, deleteVideoCategory, getAllCategory, getVideoDetailsById, updateCategory } from '../services/allApi';
 import { toast } from 'react-toastify';
 
 
@@ -53,10 +53,34 @@ function Category() {
         getCategory();
 
     }, [])
-    
+
     const deleteCategory = async (id) => {
         await deleteVideoCategory(id)
         getCategory();
+
+    }
+    const dragOver = (e) => {
+        e.preventDefault();
+        console.log("inside dragOver");
+
+    }
+
+    const videoDropped = async (e, id) => {
+        console.log(`dropped inside category with id ${id}`);
+        const vId = e.dataTransfer.getData("videoId")
+        console.log(`video with id ${vId} is dropped in category with id ${id}`);
+        const result = await getVideoDetailsById(vId)
+        console.log(result);
+        const { data } = result;
+        let selectedCategories = categories?.find((item => item.id == id))
+        console.log("selected category");
+        console.log(selectedCategories);
+        selectedCategories.allVideos.push(data);
+        console.log("final category");
+        console.log(selectedCategories);
+        const result_new = await updateCategory(id, selectedCategories)
+        getCategory();
+
 
     }
     return (
@@ -70,7 +94,10 @@ function Category() {
                 backdrop="static"
                 keyboard={false}
                 data-bs-theme='dark'
+
+                contentClassName="bg-dark"
             >
+
                 <Modal.Header closeButton>
                     <Modal.Title className='textStyle'> <i class="fa-solid fa-list text-warning me-3"></i>ADD CATEGORY</Modal.Title>
                 </Modal.Header>
@@ -94,12 +121,26 @@ function Category() {
             {
                 categories?.map((item) => (
 
-                    <div className='border border-secondary rounded p-3 m-3'>
+                    <div className='border border-secondary rounded p-3 m-3' draggable
+                        onDragOver={(e) => dragOver(e)}
+                        onDrop={(e) => videoDropped(e, item.id)}
+                    >
+
                         <div className='d-flex justify-content-between align-items-center'>
 
                             <h6>{item.categoryName}</h6>
                             <button className='btn btn-danger' onClick={() => deleteCategory(item.id)}><i class="fa-solid fa-trash"></i></button>
+
+
                         </div>
+                        {
+                            item.allVideos?.length > 0 ?
+                                item.allVideos.map((video) => (
+                                    <img src={video.thumbnailUrl} alt="" height={'100px'} width={'100%'} className='mt-2' />
+                                )) :
+                                <p>no data found</p>
+
+                        }
                     </div>
                 ))
             }

@@ -11,6 +11,10 @@ function App() {
 
   return (
     <>
+    <div style={{ 
+  background: 'linear-gradient(135deg, #0a192f 0%, #172a45 100%)',
+  minHeight: '100vh'
+}}>
       <Header />
       <Routes>
         <Route path='/' element={<LandingPage />} />
@@ -20,6 +24,7 @@ function App() {
       </Routes>
 
       <Footer />
+      </div>
     </>
   )
 }

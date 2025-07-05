@@ -10,8 +10,10 @@ function Footer() {
           <div className='overview' style={{ width: '400px' }}>
             <h5>
               <i class="fa-solid fa-video  text-warning me-3"></i>
-              <span style={{ color: 'white', fontWeight: '600' }}>MEDIA PLAYER</span>
-              <p className='mt-3' style={{ color: 'white', textAlign: 'justify' }}> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam dolore, ducimus inventore unde voluptatibus dolorem aliquam blanditiis doloribus facilis saepe magni reprehenderit rem. Excepturi sequi consequatur sed culpa autem perferendis?</p>
+              <span style={{ color: 'white', fontWeight: '600' }}>TuneNest</span>
+              <p className='mt-3' style={{ color: 'white', textAlign: 'justify' }}> TuneNest is a music streaming platform built for discovery. We empower indie artists  
+  and listeners with intuitive tools to organize, share, and enjoy music seamlessly.  
+  Join our growing community today!  </p>
             </h5>
 
           </div>
@@ -51,7 +53,7 @@ function Footer() {
         </div>
 
       </div>
-      <p className='text-center mt-5 textStyle'>COPY RIGHT&#169; 2025 MEDIA PLAYER BUILT WITH REACT</p>
+      <p className='text-center mt-5 textStyle'>COPY RIGHT&#169; 2025 TuneNest BUILT WITH REACT</p>
     </>
   )
 }

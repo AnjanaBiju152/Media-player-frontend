@@ -11,14 +11,16 @@ function LandingPage() {
       <Container className='mt-5 mb-5 d-flex align-items-center justify-container-evenly'>
         <Row>
           <Col>
-            <h3 className='textStyle'>WELCOME TO <span className='text-warning'>MEDIA PLAYER</span></h3>
-            <p className='textStyle mt-3' style={{ textAlign: 'justify' }}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae quae suscipit dolores dolore cumque laboriosam, eos pariatur error officiis! Recusandae dolore quaerat libero similique eos hic voluptatibus illo quam sit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat harum ex expedita vitae veritatis voluptatum, eos architecto dolor sed repellendus libero aliquid enim labore, quibusdam, voluptates blanditiis deserunt quasi esse! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sint temporibus tenetur, expedita quos voluptate dolorum consequuntur recusandae iure placeat accusantium magnam aut deleniti? Blanditiis ipsam molestias et voluptates cum.</p>
+            <h3 className='textStyle'>WELCOME TO <span className='text-warning'>TuneNest</span></h3>
+            <p className='textStyle mt-3' style={{ textAlign: 'justify' }}>  Discover your rhythm with TuneNest – the ultimate hub for music lovers. Stream curated playlists,  
+  explore indie artists, and organize your favorites effortlessly. Whether you're a creator or a listener,  
+  dive into a world where music meets simplicity. </p>
             <Link to={'/home'}>
               <button className='btn btn-warning mt-3'>GET STARTED <i class="fa-solid fa-arrow-right"></i></button>
             </Link>
           </Col>
           <Col>
-            <img src="https://media.tenor.com/lhlDEs5fNNEAAAAC/music-beat.gif" alt="" width={'400px'} className='ms-5' />
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="" width={'400px'} className='ms-5' />
           </Col>
         </Row>
       </Container>
@@ -28,12 +30,12 @@ function LandingPage() {
       <h3 className='textStyle'>FEATURES</h3>
       <div className='d-flex align-items-center justify-content-evenly mt-5'>
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://i.pinimg.com/originals/2d/2d/51/2d2d51ba3d86b27b221abb162c24edc0.gif"/>
+          <Card.Img variant="top" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4
+"/>
           <Card.Body>
 
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Auto-sort tracks by genre, mood, or tempo. Your library, your rules. 
             </Card.Text>
             <Link to={'./home'}>
               <Button variant="primary">ADD VIDEO</Button>
@@ -41,12 +43,11 @@ function LandingPage() {
           </Card.Body>
         </Card>
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://i.pinimg.com/originals/ad/d2/31/add23123b088c3301cc2c71f7767048d.gif" />
+          <Card.Img variant="top" src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec" />
           <Card.Body>
 
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Add your music videos in seconds. Share your creations with the community.  
             </Card.Text>
             <Link to={'/home'}>
               <Button variant="primary">VIEW VIDEO</Button>
@@ -54,12 +55,13 @@ function LandingPage() {
           </Card.Body>
         </Card>
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://i.pinimg.com/originals/2d/2d/51/2d2d51ba3d86b27b221abb162c24edc0.gif" />
+          <Card.Img variant="top" src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff" />
           <Card.Body>
 
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              Revisit recently played songs and pick up where you left off.  
+ 
+
             </Card.Text>
             <Link to={'/watch'}>
               <Button variant="primary">VIEW HISTORY</Button>
